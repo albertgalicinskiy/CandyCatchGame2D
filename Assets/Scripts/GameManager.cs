@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     int score = 0;
 
+    int lives = 3;
+
     bool gameOver = false;
 
     public TextMeshProUGUI scoreText;
@@ -37,6 +39,28 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
-        print(score);
+        // print(score);
     }
+
+    public void DecreaseLife()
+    {
+        if (lives > 0)
+        {
+            lives--;
+            print(lives);
+        }
+
+        if (lives <= 0)
+        {
+            gameOver = true;
+
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        print("GameOver");
+    }
+
 }
