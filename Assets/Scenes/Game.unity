@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacea4468aa6e2c4b964519f6d4a662a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 0
+  maxX: 6.5
   Candies:
   - {fileID: 2473633781264796337, guid: a523b04e7cb7f154eb515d487b661593, type: 3}
   - {fileID: 8880644062971805409, guid: b2212f90e7ff1e949b4521260732bedb, type: 3}
