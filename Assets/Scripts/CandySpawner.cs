@@ -8,7 +8,7 @@ public class CandySpawner : MonoBehaviour
     // range by X where we want to appear our candy
     [SerializeField] float maxX; // 6.5
 
-    [SerializeField] float spawnInterval;
+    [SerializeField] float spawnInterval; // 1
 
     public GameObject[] Candies; // list of candies objects
 

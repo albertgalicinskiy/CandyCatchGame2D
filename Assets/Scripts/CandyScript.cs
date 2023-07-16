@@ -22,6 +22,7 @@ public class CandyScript : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             // Increment Score
+            GameManager.instance.IncrementScore();
             Destroy(gameObject);
         }
 
