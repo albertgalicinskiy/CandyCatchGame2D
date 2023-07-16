@@ -12,12 +12,15 @@ public class CandySpawner : MonoBehaviour
 
     public GameObject[] Candies; // list of candies objects
 
+
+    // we create an instance of this whole class using static variable
     public static CandySpawner instance;
 
-    // define instance of this class
+    // we assign value for the instance static variable
     private void Awake() {
         if (instance == null)
         {
+            // means value of instance variable is the same class we are which in
             instance = this;
         }
     }
