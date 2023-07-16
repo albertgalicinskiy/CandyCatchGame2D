@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
-    [SerializeField] float moveSpeed;
+    [SerializeField] float maxPos; // 7
+
+    [SerializeField] float moveSpeed; // 15
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +31,9 @@ public class PlayerController : MonoBehaviour
         // move player to left and right
         float inputX = Input.GetAxis("Horizontal");
         transform.position += Vector3.right * inputX * moveSpeed * Time.deltaTime;
+
+        // restrict movement to boundaries
+        float xPos = Mathf.Clamp(transform.position.x, -maxPos, maxPos);
+        transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
     }
 }
