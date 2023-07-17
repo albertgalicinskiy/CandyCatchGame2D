@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     // this will be our LivesPanel
     public GameObject livesHolder;
 
+    // assign here our GameOverPanel in Inspector
+    public GameObject gameOverPanel;
+
     int score = 0;
 
     int lives = 3;
@@ -76,7 +79,7 @@ public class GameManager : MonoBehaviour
 
         // we stop moving player
         GameObject.Find("Player").GetComponent<PlayerController>().canMove = false;
-
+        gameOverPanel.SetActive(true);
         print("GameOver");
     }
 
