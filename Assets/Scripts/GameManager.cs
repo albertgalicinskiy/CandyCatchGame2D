@@ -40,9 +40,14 @@ public class GameManager : MonoBehaviour
 
     public void IncrementScore()
     {
-        score++;
-        scoreText.text = score.ToString();
-        // print(score);
+
+        // if gameOver is not happen
+        if (!gameOver)
+        {
+            score++;
+            scoreText.text = score.ToString();
+        }
+
     }
 
     public void DecreaseLife()
@@ -66,6 +71,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        // we stop our coroutine to drop our candies
+        CandySpawner.instance.StopSpawningCandies();
+
+        // we stop moving player
+        GameObject.Find("Player").GetComponent<PlayerController>().canMove = false;
+
         print("GameOver");
     }
 
