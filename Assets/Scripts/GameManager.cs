@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     // because we need to access to this class from everywhere
     public static GameManager instance;
 
+    // this will be our LivesPanel
+    public GameObject livesHolder;
+
     int score = 0;
 
     int lives = 3;
@@ -48,6 +51,9 @@ public class GameManager : MonoBehaviour
         {
             lives--;
             print(lives);
+
+            // get child life from panel and dissapear when this function is called
+            livesHolder.transform.GetChild(lives).gameObject.SetActive(false);
         }
 
         if (lives <= 0)
